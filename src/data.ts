@@ -51,6 +51,7 @@ export const projects: Project[] = [
       'Owned the escrow state machine and async callback pipeline end to end',
     ],
     tags: ['LLM agents', 'Python', 'State machines'],
+    repo: 'https://github.com/saitaflex/smurf',
   },
   {
     name: 'BatchTwin',
@@ -88,6 +89,56 @@ export const projects: Project[] = [
     tags: ['Python', 'FastAPI', 'React', 'TypeScript', 'Geospatial'],
     repo: 'https://github.com/saitaflex/pyragrid',
     live: 'https://rural-valley.vercel.app',
+  },
+  {
+    name: 'Honest Crypto Trading Bot',
+    tagline: 'Approval-based Binance trading bot with Telegram control',
+    description:
+      'A disciplined spot-trading bot built around one rule: never lie to yourself about the numbers. It scans BTC and ETH on 4-hour candles for one backtested setup and asks for approval on Telegram before trading.',
+    highlights: [
+      'Fee-adjusted, pessimistic 6-year backtests with Deflated Sharpe Ratio correction',
+      'Stop-losses live on the exchange itself and trail upward as trades win',
+      'Config-gated Kelly position sizing, integration tests for money paths, CI',
+    ],
+    tags: ['Python', 'Binance API', 'Telegram Bot', 'SQLite', 'Backtesting'],
+  },
+  {
+    name: 'nheb_no5rej',
+    tagline: 'Undergraduate opportunity scraper',
+    description:
+      'Continuously discovers scholarships, internships, exchanges, hackathons and summer schools in Scandinavia, Japan and China for two independent tracks — Business Computing and Cybersecurity.',
+    highlights: [
+      'Python scraper workers respecting robots.txt, with retries and backoff',
+      'Pipeline that deduplicates, verifies, classifies and ranks opportunities',
+      'Two physically separate MySQL databases behind a track-scoped PHP REST API',
+    ],
+    tags: ['Python', 'Web scraping', 'PHP', 'MySQL', 'REST API'],
+  },
+  {
+    name: 'RoadGuard AI',
+    tagline: 'Real-time road hazard detection & voice co-pilot',
+    award: 'RoboAI Hackathon 2025, Esprit',
+    description:
+      'Detects obstacles, potholes and dangerous road conditions in real time and announces them through voice alerts and a visual overlay — for regular drivers, night drivers and visually impaired users.',
+    highlights: [
+      'YOLOv8 hazard detection with MiDaS depth estimation for distance',
+      'FastAPI REST + WebSocket backend streaming detections',
+      'Spoken alerts via pyttsx3 / gTTS',
+    ],
+    tags: ['Python', 'YOLOv8', 'MiDaS', 'FastAPI', 'Computer Vision'],
+  },
+  {
+    name: 'HyPay + Guardian AI',
+    tagline: 'Mobile wallet with explainable fraud detection',
+    award: 'AI & Cybersecurity hackathon project, Esprit',
+    description:
+      'A fintech platform for Tunisia where every transaction is scored in real time by Guardian AI, an explainable fraud-detection engine that tells users why a payment was flagged.',
+    highlights: [
+      'Multi-factor risk analysis across six transaction dimensions',
+      'Transparent explanations for every decision instead of a black box',
+      'Flutter mobile app with Google Maps integration',
+    ],
+    tags: ['Flutter', 'Node.js', 'TypeScript', 'MongoDB', 'Explainable AI'],
   },
   {
     name: 'Sabbēr',
