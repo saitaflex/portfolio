@@ -4,83 +4,170 @@ export interface Project {
   description: string
   highlights: string[]
   tags: string[]
-  repo: string
+  repo?: string
+  live?: string
+  award?: string
   featured?: boolean
 }
 
 export const profile = {
   name: 'Oussama Labidi',
   handle: 'saitaflex',
-  role: 'Software Engineer · Industrial & Web Systems',
-  location: 'Tunisia',
+  role: 'AI & Full-Stack Developer · Game Development Instructor',
+  location: 'Ariana, Tunisia',
   summary:
-    'I build software where correctness actually matters — from GMP-compliant electronic batch records for pharmaceutical manufacturing to modern web tooling. I care about audit trails, offline resilience, and systems that hold up on a real factory floor.',
+    'I build applied AI products end to end — from self-hosted LLM pipelines to production web platforms. Five hackathons and innovation programs, three podium/top-10 placements, and I teach Unity & C# at GOMYCODE.',
   email: 'oussamalollabidi@gmail.com',
   github: 'https://github.com/saitaflex',
+  linkedin: 'https://www.linkedin.com/in/oussema-labidi',
+  cv: `${import.meta.env.BASE_URL}Oussama_Labidi_CV.pdf`,
 }
 
 export const projects: Project[] = [
   {
-    name: 'BatchTwin',
-    tagline: 'Paperless electronic batch records for pharma manufacturing',
+    name: 'Feyaklink',
+    tagline: 'AI scam detection & responsible-consumption platform',
+    award: 'Selected — 13th Bal des Projets, Esprit',
     description:
-      'A GMP-compliant eBR system built on a live "digital twin" of the manufacturing line. It replaces four paper documents (Fabrication, two Conditionnement stages, and Contrôle Qualité) with one integrated system that captures every gram lost, every check, and every signature — then auto-generates compliant, costed batch records.',
+      'A dual-purpose platform pairing URL and social-media scam detection with an SDG 12 responsible-consumption scoring module for Tunisian consumers.',
     highlights: [
-      '21 CFR Part 11 electronic signatures with PBKDF2-HMAC-SHA256 (240k rounds)',
-      'Tamper-evident, hash-chained audit trail with external append-only anchoring',
-      'Live costing: real consumption vs. BOM, loss tracking, and true yield',
-      'Change control, auto-opened deviations & CAPA, and SPC drift forecasting',
-      'Equipment telemetry over OPC UA, Modbus TCP, PROFINET & EtherNet/IP',
-      'Offline-capable PWA, multilingual EN/FR/AR with full RTL support',
+      'Image authenticity checks, seller certification and community reporting',
+      'Multilingual assistant in English, French, Arabic and Tunisian Derja',
+      'Self-hosted Ollama LLMs with Groq cloud fallback',
+      'Deployed free-tier across Vercel, Render and Supabase',
+      'Authored the SDG-first grant application and business case',
     ],
-    tags: ['FastAPI', 'Python', 'SQLite (WAL)', 'Odoo XML-RPC', 'OPC UA', 'React', 'ReportLab', 'PWA'],
-    repo: 'https://github.com/saitaflex/batchtwin',
+    tags: ['Laravel 11', 'React 18', 'Vite', 'FastAPI', 'Ollama', 'Groq', 'Supabase'],
     featured: true,
   },
   {
-    name: 'vite-react-template',
-    tagline: 'React + TypeScript starter, ready for the edge',
+    name: 'AI-Verified Escrow',
+    tagline: 'Funds release only after AI agents verify the work',
+    award: '1st place — The Build Room Hackathon',
     description:
-      'My reusable Vite + React + TypeScript template — the way I like to start every front-end project. Wired for Cloudflare Workers deployment with Wrangler, so a project can go from clone to the edge with a single command.',
+      'Built the AI core of an escrow app: an LLM planner turns prose requirements into a locked acceptance checklist, and sandboxed verifier agents test the deliverables.',
     highlights: [
-      'Vite 6 with instant hot-module reloading',
-      'Strict TypeScript, split configs for app / node / worker',
-      'Cloudflare Workers deployment via Wrangler',
-      'ESLint preconfigured out of the box',
+      'Three verifier agents (HTTP, browser, vision) attaching evidence to each verdict',
+      'Owned the escrow state machine and async callback pipeline end to end',
     ],
-    tags: ['TypeScript', 'React', 'Vite', 'Cloudflare Workers', 'Wrangler', 'ESLint'],
-    repo: 'https://github.com/saitaflex/vite-react-template',
+    tags: ['LLM agents', 'Python', 'State machines'],
   },
   {
-    name: 'index',
-    tagline: 'Where it started — learning Git & the web',
+    name: 'BatchTwin',
+    tagline: 'Paperless electronic batch records for pharma manufacturing',
+    award: 'Top 6 of 40+ teams — "Automate or Die", IEEE Tunisia',
     description:
-      'A minimal hand-written HTML page from when I was getting comfortable with Git and version control. Small, but it is where the habit of committing everything began.',
-    highlights: ['Semantic HTML5 fundamentals', 'First steps with Git version control'],
-    tags: ['HTML', 'Git'],
-    repo: 'https://github.com/saitaflex/index',
+      'Replaces the four paper documents of a GMP batch record with one integrated system on top of Odoo — capturing every check, loss and signature, then generating compliant, costed batch records.',
+    highlights: [
+      '21 CFR Part 11 electronic signatures and hash-chained audit trail',
+      'Live costing: real consumption vs. BOM, loss tracking and true yield',
+      'Offline-capable PWA, multilingual EN/FR/AR with RTL support',
+    ],
+    tags: ['FastAPI', 'Python', 'Odoo XML-RPC', 'React', 'PWA'],
+    repo: 'https://github.com/saitaflex/batchtwin',
+  },
+  {
+    name: 'BatchTwin Ledger',
+    tagline: 'Tamper-proof batch records on Hedera',
+    description:
+      'Anchors pharmaceutical and food-supplement batch records on the Hedera Consensus Service so manufacturers can prove to GMP inspectors that records were not altered after signing.',
+    highlights: [],
+    tags: ['Hedera', 'Consensus Service', 'GMP'],
+    repo: 'https://github.com/saitaflex/batchtwin-ledger',
+  },
+  {
+    name: 'PyraGrid',
+    tagline: 'Wildfire asset-risk intelligence',
+    description:
+      'Geospatial decision-support platform for wildfire risk to assets, built as a two-person team. I owned the FastAPI engine.',
+    highlights: [
+      'Real NASA FIRMS fire data for Spain and Tunisia',
+      'Ground sensors placed on real OpenStreetMap features',
+      '72 tests and a measured AI reliability evaluation',
+    ],
+    tags: ['Python', 'FastAPI', 'React', 'TypeScript', 'Geospatial'],
+    repo: 'https://github.com/saitaflex/pyragrid',
+    live: 'https://rural-valley.vercel.app',
+  },
+  {
+    name: 'Sabbēr',
+    tagline: 'Tunisian-dialect voice agricultural advisory (IVR)',
+    description:
+      'Voice-based IVR giving smallholder farmers agricultural guidance without literacy or a smartphone. Deployment regions prioritized through a governorate-level market-gap analysis of rural vulnerability data.',
+    highlights: [],
+    tags: ['Voice / IVR', 'Data analysis', 'AgriTech'],
+  },
+  {
+    name: 'Aurora',
+    tagline: 'Smart floating solar platform',
+    description:
+      'Co-developed an AI/IoT platform for the Clean Water and Clean Energy SDGs, with pollution-detection models and Power BI dashboards over live environmental sensor data.',
+    highlights: [],
+    tags: ['IoT', 'Machine Learning', 'Power BI'],
+  },
+  {
+    name: 'Oxygena',
+    tagline: 'IoT/AI wildfire early-warning system',
+    description: 'Innovation / Climate Challenge project for early wildfire detection using IoT sensing and AI.',
+    highlights: [],
+    tags: ['IoT', 'AI', 'Climate'],
   },
 ]
 
+export const experience = [
+  {
+    role: 'Game Development Instructor',
+    org: 'GOMYCODE',
+    period: '07/2026 – 08/2026',
+    points: [
+      'Teach Unity, C# and game-engine fundamentals to beginner cohorts, taking students from core concepts to a playable game built from scratch.',
+      'Design hands-on lesson plans covering the Unity Editor workflow, game mechanics and project-based learning.',
+    ],
+  },
+  {
+    role: 'Founder & Manager',
+    org: 'Banzai Shop',
+    period: '10/2022 – Present',
+    points: [
+      'Founded and run an online sustainable-fashion marketplace — sourcing, digital marketing and sales end to end.',
+      'Built a garment upcycling process that turns textile leftovers into new sellable products.',
+    ],
+  },
+  {
+    role: 'License, Business Computing',
+    org: 'Esprit School of Business',
+    period: '2024 – Present',
+    points: [],
+  },
+]
+
+export const achievements: [string, string, string][] = [
+  ['1st place', 'The Build Room Hackathon', '08/2026'],
+  ['Top 6 / 40+ teams', '"Automate or Die" Hackathon, IEEE Tunisia Section', '07/2026'],
+  ['3rd place', 'WAICA Re GreenPrint Hackathon', '05/2026'],
+  ['3rd place', 'AI Robotics Bootcamp, Esprit', '12/2025'],
+  ['Top 10', 'AixCyber Hackathon — AI & Cybersecurity, Esprit', '12/2025'],
+  ['Selected', '13th Bal des Projets, Esprit', '07/2026'],
+  ['Virtual Delegate', 'World Bank Youth Summit', '08/2026'],
+  ['Participant', 'MASSAI 2025 — Mediterranean & African Summer School on AI', '07/2025'],
+]
+
+export const certifications = [
+  'Rapid Application Development with LLMs',
+  'Building Transformer-Based NLP Applications',
+  'Applications of AI for Predictive Maintenance (NVIDIA)',
+  'Hedera Hashgraph Developer',
+]
+
 export const skills: { group: string; items: string[] }[] = [
+  { group: 'Languages', items: ['Python', 'Java', 'JavaScript', 'TypeScript', 'R', 'C#'] },
+  { group: 'Web & Mobile', items: ['Laravel', 'React', 'Vite', 'Flutter', 'FastAPI', 'XAMPP'] },
   {
-    group: 'Languages',
-    items: ['Python', 'TypeScript', 'JavaScript', 'SQL', 'HTML', 'CSS'],
+    group: 'AI & Data',
+    items: ['Machine Learning', 'RNNs', 'LLMs (Ollama, Groq)', 'Pandas', 'Matplotlib', 'Seaborn', 'Power BI'],
   },
-  {
-    group: 'Backend & Data',
-    items: ['FastAPI', 'SQLite / WAL', 'REST APIs', 'ReportLab', 'XML-RPC'],
-  },
-  {
-    group: 'Frontend',
-    items: ['React', 'Vite', 'PWA', 'Recharts', 'Responsive UI'],
-  },
-  {
-    group: 'Industrial & Integrations',
-    items: ['Odoo', 'OPC UA', 'Modbus TCP', 'PROFINET', 'EtherNet/IP'],
-  },
-  {
-    group: 'Practices',
-    items: ['GMP / 21 CFR Part 11', 'DevOps & CI/CD', 'Audit trails', 'SPC'],
-  },
+  { group: 'Databases & Tools', items: ['SQL', 'MySQL', 'Git', 'UML'] },
+  { group: 'Automation & Scraping', items: ['Selenium', 'BeautifulSoup', 'n8n'] },
+  { group: 'Game Dev', items: ['Unity', 'C#'] },
+  { group: 'Spoken', items: ['Arabic (native)', 'French (fluent)', 'English (fluent)'] },
 ]

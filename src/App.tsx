@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react'
-import { profile, projects, skills } from './data'
+import { achievements, certifications, experience, profile, projects, skills } from './data'
 
 function Nav() {
   const links = [
     ['About', '#about'],
     ['Projects', '#projects'],
+    ['Experience', '#experience'],
+    ['Awards', '#awards'],
     ['Skills', '#skills'],
     ['Contact', '#contact'],
   ]
@@ -48,8 +50,8 @@ function Hero() {
         <a className="btn btn--primary" href="#projects">
           View my work
         </a>
-        <a className="btn btn--ghost" href="#contact">
-          Get in touch
+        <a className="btn btn--ghost" href={profile.cv} target="_blank" rel="noreferrer">
+          Download CV
         </a>
       </div>
     </section>
@@ -58,9 +60,9 @@ function Hero() {
 
 function About() {
   const stats = [
-    ['4+', 'Public projects'],
-    ['21 CFR', 'Part 11 compliant systems'],
-    ['3', 'Languages (EN / FR / AR)'],
+    ['1st', 'Place — The Build Room'],
+    ['5', 'Hackathons & programs'],
+    ['3', 'Languages (AR / FR / EN)'],
   ]
   return (
     <section className="section" id="about">
@@ -70,15 +72,15 @@ function About() {
       <div className="about">
         <div className="about__text">
           <p>
-            I'm a software engineer based in {profile.location}, drawn to problems where a
-            wrong answer has real consequences. My flagship project, <strong>BatchTwin</strong>,
-            digitizes pharmaceutical batch records — a domain where every signature, deviation,
-            and gram of material has to be traceable and tamper-evident.
+            I'm an AI and full-stack developer based in {profile.location}, studying Business
+            Computing at Esprit. I'm currently building <strong>Feyaklink</strong>, an AI-powered
+            scam-detection and responsible-consumption platform selected for Esprit's 13th Bal des
+            Projets.
           </p>
           <p>
-            That mindset carries into everything I build: clean TypeScript front-ends,
-            resilient FastAPI back-ends, and DevOps pipelines that ship reliably. I like
-            systems that work offline, hold their integrity under audit, and still feel good to use.
+            I like shipping complete products — self-hosted LLM pipelines, FastAPI microservices,
+            Laravel and React front-ends — and I teach Unity and C# to new developers at GOMYCODE.
+            I also founded Banzai Shop, a sustainable-fashion marketplace I've run since 2022.
           </p>
         </div>
         <div className="about__stats">
@@ -108,17 +110,21 @@ function Projects() {
                 {p.name}
                 {p.featured && <span className="card__badge">Featured</span>}
               </h3>
-              <a
-                className="card__link"
-                href={p.repo}
-                target="_blank"
-                rel="noreferrer"
-                aria-label={`${p.name} on GitHub`}
-              >
-                ↗
-              </a>
+              <div className="card__links">
+                {p.live && (
+                  <a className="card__link" href={p.live} target="_blank" rel="noreferrer">
+                    Live ↗
+                  </a>
+                )}
+                {p.repo && (
+                  <a className="card__link" href={p.repo} target="_blank" rel="noreferrer">
+                    Code ↗
+                  </a>
+                )}
+              </div>
             </div>
             <p className="card__tagline">{p.tagline}</p>
+            {p.award && <p className="card__award">🏆 {p.award}</p>}
             <p className="card__desc">{p.description}</p>
             {p.highlights.length > 0 && (
               <ul className="card__highlights">
@@ -141,11 +147,67 @@ function Projects() {
   )
 }
 
+function Experience() {
+  return (
+    <section className="section" id="experience">
+      <h2 className="section__title">
+        <span className="section__num">03</span> Experience
+      </h2>
+      <div className="timeline">
+        {experience.map((e) => (
+          <div className="timeline__item" key={e.role}>
+            <div className="timeline__head">
+              <h3 className="timeline__role">
+                {e.role} <span className="timeline__org">· {e.org}</span>
+              </h3>
+              <span className="timeline__period">{e.period}</span>
+            </div>
+            {e.points.length > 0 && (
+              <ul className="card__highlights">
+                {e.points.map((pt) => (
+                  <li key={pt}>{pt}</li>
+                ))}
+              </ul>
+            )}
+          </div>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+function Awards() {
+  return (
+    <section className="section" id="awards">
+      <h2 className="section__title">
+        <span className="section__num">04</span> Awards & Certifications
+      </h2>
+      <div className="awards">
+        {achievements.map(([rank, event, date]) => (
+          <div className="award" key={event}>
+            <span className="award__rank">{rank}</span>
+            <span className="award__event">{event}</span>
+            <span className="award__date">{date}</span>
+          </div>
+        ))}
+      </div>
+      <h3 className="skills__label awards__certs">Certifications</h3>
+      <div className="skills__items">
+        {certifications.map((c) => (
+          <span className="tag" key={c}>
+            {c}
+          </span>
+        ))}
+      </div>
+    </section>
+  )
+}
+
 function Skills() {
   return (
     <section className="section" id="skills">
       <h2 className="section__title">
-        <span className="section__num">03</span> Skills
+        <span className="section__num">05</span> Skills
       </h2>
       <div className="skills">
         {skills.map((s) => (
@@ -169,17 +231,23 @@ function Contact() {
   return (
     <section className="section section--contact" id="contact">
       <h2 className="section__title">
-        <span className="section__num">04</span> Contact
+        <span className="section__num">06</span> Contact
       </h2>
       <p className="contact__lead">
-        Have a project in mind, or want to talk about industrial software? I'd love to hear from you.
+        Open to internships, collaborations and hackathon teams — I'd love to hear from you.
       </p>
       <div className="contact__actions">
         <a className="btn btn--primary" href={`mailto:${profile.email}`}>
           {profile.email}
         </a>
         <a className="btn btn--ghost" href={profile.github} target="_blank" rel="noreferrer">
-          github.com/{profile.handle}
+          GitHub
+        </a>
+        <a className="btn btn--ghost" href={profile.linkedin} target="_blank" rel="noreferrer">
+          LinkedIn
+        </a>
+        <a className="btn btn--ghost" href={profile.cv} target="_blank" rel="noreferrer">
+          CV (PDF)
         </a>
       </div>
     </section>
@@ -217,6 +285,8 @@ export default function App() {
         <Hero />
         <About />
         <Projects />
+        <Experience />
+        <Awards />
         <Skills />
         <Contact />
       </main>
