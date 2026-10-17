@@ -13,10 +13,10 @@ export interface Project {
 export const profile = {
   name: 'Oussama Labidi',
   handle: 'saitaflex',
-  role: 'AI & Full-Stack Developer · Game Development Instructor',
+  role: 'Full-Stack & AI Developer · LLM Agents · Open to a PFE (2027)',
   location: 'Ariana, Tunisia',
   summary:
-    'I build applied AI products end to end — from self-hosted LLM pipelines to production web platforms. Five hackathons and innovation programs, three podium/top-10 placements, and I teach Unity & C# at GOMYCODE.',
+    'I build complete products where solid web engineering meets applied AI — FastAPI and Laravel back-ends, React front-ends, and LLM agents that plan, call tools and verify their own output. 1st place at The Build Room, 8+ hackathons, and I teach Unity & C# at GOMYCODE.',
   email: 'oussamalollabidi@gmail.com',
   github: 'https://github.com/saitaflex',
   linkedin: 'https://www.linkedin.com/in/oussema-labidi',
@@ -34,10 +34,11 @@ export const projects: Project[] = [
       'Image authenticity checks, seller certification and community reporting',
       'Multilingual assistant in English, French, Arabic and Tunisian Derja',
       'Self-hosted Ollama LLMs with Groq cloud fallback',
-      'Deployed free-tier across Vercel, Render and Supabase',
+      'Ministry inspector module: rule score + logistic-regression second opinion, AI-drafted letters that must pass a fact check',
+      'Deployed on an Azure VM (nginx, PHP 8.3, MariaDB, HTTPS) with the front-end on Cloudflare Pages',
       'Authored the SDG-first grant application and business case',
     ],
-    tags: ['Laravel 11', 'React 18', 'Vite', 'FastAPI', 'Ollama', 'Groq', 'Supabase'],
+    tags: ['Laravel 11', 'React 18', 'Vite', 'FastAPI', 'MySQL', 'Ollama', 'Groq', 'Azure'],
     featured: true,
   },
   {
@@ -52,6 +53,22 @@ export const projects: Project[] = [
     ],
     tags: ['LLM agents', 'Python', 'State machines'],
     repo: 'https://github.com/saitaflex/smurf',
+  },
+  {
+    name: 'UNSEEN',
+    tagline: 'Atlas of hidden rare-disease patients',
+    award: 'Hack-Nation 7th Global AI Hackathon',
+    description:
+      'Estimates how many babies are born each year with 22 recessive rare diseases across 18 countries — from population-genetics data and consanguinity rates — and sets that against how much research each disease actually gets.',
+    highlights: [
+      'Reproducible Python data pipeline (gnomAD, Europe PMC, ClinicalTrials.gov) with per-number calculation traces',
+      'Tool-calling AI agent with a numeric verifier, so answers can only quote traceable figures',
+      'React + TypeScript + Tailwind front-end; 48 tests in GitHub Actions CI',
+    ],
+    tags: ['Python', 'React', 'TypeScript', 'Tailwind', 'LLM agents', 'Vercel'],
+    repo: 'https://github.com/saitaflex/Unseen',
+    live: 'https://unseen-atlas.vercel.app',
+    featured: true,
   },
   {
     name: 'BatchTwin',
@@ -86,9 +103,20 @@ export const projects: Project[] = [
       'Ground sensors placed on real OpenStreetMap features',
       '72 tests and a measured AI reliability evaluation',
     ],
-    tags: ['Python', 'FastAPI', 'React', 'TypeScript', 'Geospatial'],
+    tags: ['Python', 'FastAPI', 'PostgreSQL', 'React', 'TypeScript', 'Groq'],
     repo: 'https://github.com/saitaflex/pyragrid',
     live: 'https://rural-valley.vercel.app',
+  },
+  {
+    name: 'Conquest Map',
+    tagline: 'Interactive history map of the Mediterranean',
+    description:
+      'Shows who conquered whom over time: animated border playback, battles and wars on a map, each with live Wikipedia summaries.',
+    highlights: [
+      'Data build scripts pulling historical borders, Wikidata battles and wars, and Wikipedia infobox winners',
+    ],
+    tags: ['JavaScript', 'Vite', 'MapLibre', 'Wikidata'],
+    live: 'https://conquest-map-gold.vercel.app',
   },
   {
     name: 'Honest Crypto Trading Bot',
@@ -194,6 +222,8 @@ export const experience = [
 
 export const achievements: [string, string, string][] = [
   ['1st place', 'The Build Room Hackathon', '08/2026'],
+  ['Participant', 'Hack-Nation 7th Global AI Hackathon (UNSEEN)', '10/2026'],
+  ['Participant', 'HaT @ AKT26 — Al-Khawarizmi Tour, AI track', '10/2026'],
   ['Top 6 / 40+ teams', '"Automate or Die" Hackathon, IEEE Tunisia Section', '07/2026'],
   ['3rd place', 'WAICA Re GreenPrint Hackathon', '05/2026'],
   ['3rd place', 'AI Robotics Bootcamp, Esprit', '12/2025'],
@@ -212,12 +242,15 @@ export const certifications = [
 
 export const skills: { group: string; items: string[] }[] = [
   { group: 'Languages', items: ['Python', 'Java', 'JavaScript', 'TypeScript', 'R', 'C#'] },
-  { group: 'Web & Mobile', items: ['Laravel', 'React', 'Vite', 'Flutter', 'FastAPI', 'XAMPP'] },
+  { group: 'Back-end', items: ['FastAPI', 'Laravel', 'REST APIs', 'WebSockets', 'PHP'] },
+  { group: 'Front-end & Mobile', items: ['React', 'TypeScript', 'Vite', 'Tailwind', 'Flutter'] },
   {
-    group: 'AI & Data',
-    items: ['Machine Learning', 'RNNs', 'LLMs (Ollama, Groq)', 'Pandas', 'Matplotlib', 'Seaborn', 'Power BI'],
+    group: 'AI & Agents',
+    items: ['LLM integration (Ollama, Groq, OpenAI)', 'Tool-calling agents', 'Machine Learning', 'YOLOv8', 'RNNs'],
   },
-  { group: 'Databases & Tools', items: ['SQL', 'MySQL', 'Git', 'UML'] },
+  { group: 'Data', items: ['Pandas', 'Matplotlib', 'Seaborn', 'Power BI', 'Data pipelines'] },
+  { group: 'Databases', items: ['MySQL / MariaDB', 'PostgreSQL', 'SQLite', 'SQL'] },
+  { group: 'DevOps & Tools', items: ['Git', 'GitHub Actions', 'Vercel', 'Azure VM', 'nginx', 'pytest', 'UML'] },
   { group: 'Automation & Scraping', items: ['Selenium', 'BeautifulSoup', 'n8n'] },
   { group: 'Game Dev', items: ['Unity', 'C#'] },
   { group: 'Spoken', items: ['Arabic (native)', 'French (fluent)', 'English (fluent)'] },

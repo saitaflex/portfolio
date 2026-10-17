@@ -61,7 +61,7 @@ function Hero() {
 function About() {
   const stats = [
     ['1st', 'Place — The Build Room'],
-    ['5', 'Hackathons & programs'],
+    ['8+', 'Hackathons & programs'],
     ['3', 'Languages (AR / FR / EN)'],
   ]
   return (
@@ -81,6 +81,10 @@ function About() {
             I like shipping complete products — self-hosted LLM pipelines, FastAPI microservices,
             Laravel and React front-ends — and I teach Unity and C# to new developers at GOMYCODE.
             I also founded Banzai Shop, a sustainable-fashion marketplace I've run since 2022.
+          </p>
+          <p>
+            I'm looking for a <strong>PFE internship starting early 2027</strong> where I can do real
+            development work combined with AI — agents, LLM-powered features, or data-heavy products.
           </p>
         </div>
         <div className="about__stats">
