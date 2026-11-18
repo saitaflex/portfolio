@@ -74,8 +74,8 @@ function About() {
           <p>
             I'm an AI and full-stack developer based in {profile.location}, studying Business
             Computing at Esprit. I'm currently building <strong>Feyaklink</strong>, an AI-powered
-            scam-detection and responsible-consumption platform selected for Esprit's 13th Bal des
-            Projets.
+            scam-detection and responsible-consumption platform. I'm also co-founder and backend
+            lead of <strong>PyraGrid</strong>, an AI and IoT wildfire early-warning startup.
           </p>
           <p>
             I like shipping complete products — self-hosted LLM pipelines, FastAPI microservices,

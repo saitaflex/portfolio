@@ -27,7 +27,6 @@ export const projects: Project[] = [
   {
     name: 'Feyaklink',
     tagline: 'AI scam detection & responsible-consumption platform',
-    award: 'Selected — 13th Bal des Projets, Esprit',
     description:
       'A dual-purpose platform pairing URL and social-media scam detection with an SDG 12 responsible-consumption scoring module for Tunisian consumers.',
     highlights: [
@@ -95,10 +94,12 @@ export const projects: Project[] = [
   },
   {
     name: 'PyraGrid',
-    tagline: 'Wildfire asset-risk intelligence',
+    tagline: 'AI & IoT wildfire early-warning startup',
+    award: '1st place — Rural Valley Hackathon',
     description:
-      'Geospatial decision-support platform for wildfire risk to assets, built as a two-person team. I owned the FastAPI engine.',
+      'Co-founded an IoT- and AI-powered wildfire early-warning startup serving fire services, governments and NGOs. I lead the FastAPI/PostgreSQL backend and the AI Advisor.',
     highlights: [
+      'AI Advisor that uses live sensor data and cites emergency-plan sections',
       'Real NASA FIRMS fire data for Spain and Tunisia',
       'Ground sensors placed on real OpenStreetMap features',
       '72 tests and a measured AI reliability evaluation',
@@ -195,6 +196,15 @@ export const projects: Project[] = [
 
 export const experience = [
   {
+    role: 'Co-Founder & Backend Lead',
+    org: 'PyraGrid',
+    period: '09/2026 – Present',
+    points: [
+      'Co-founded an IoT- and AI-powered wildfire early-warning startup serving fire services, governments and NGOs, in Spain and Tunisia.',
+      'Lead the FastAPI/PostgreSQL backend and AI Advisor development; authored the business plan and applied for NVIDIA GPU compute.',
+    ],
+  },
+  {
     role: 'Game Development Instructor',
     org: 'GOMYCODE',
     period: '07/2026 – 08/2026',
@@ -221,6 +231,8 @@ export const experience = [
 ]
 
 export const achievements: [string, string, string][] = [
+  ['1st place', 'GoMyCode Hackathon', '09/2026'],
+  ['1st place', 'Rural Valley Hackathon (PyraGrid)', '09/2026'],
   ['1st place', 'The Build Room Hackathon', '08/2026'],
   ['Participant', 'Hack-Nation 7th Global AI Hackathon (UNSEEN)', '10/2026'],
   ['Participant', 'HaT @ AKT26 — Al-Khawarizmi Tour, AI track', '10/2026'],
@@ -228,7 +240,6 @@ export const achievements: [string, string, string][] = [
   ['3rd place', 'WAICA Re GreenPrint Hackathon', '05/2026'],
   ['3rd place', 'AI Robotics Bootcamp, Esprit', '12/2025'],
   ['Top 10', 'AixCyber Hackathon — AI & Cybersecurity, Esprit', '12/2025'],
-  ['Selected', '13th Bal des Projets, Esprit', '07/2026'],
   ['Virtual Delegate', 'World Bank Youth Summit', '08/2026'],
   ['Participant', 'MASSAI 2025 — Mediterranean & African Summer School on AI', '07/2025'],
 ]
